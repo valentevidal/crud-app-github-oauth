@@ -1,0 +1,32 @@
+
+CRUD-APP-GITHUB-OAUTH\
+    .gitignore
+    env
+    crudago (root)
+    │   app-structure.txt
+    │   db.sqlite3
+    │   manage.py
+    │
+    ├───crudago
+    │   │   asgi.py
+    │   │   settings.py
+    │   │   urls.py
+    │   │   wsgi.py
+    │   │   __init__.py
+    │   │
+    │   └───__pycache__
+    │           settings.cpython-37.pyc
+    │           urls.cpython-37.pyc
+    │           wsgi.cpython-37.pyc
+    │           __init__.cpython-37.pyc
+    │
+    └───update_profile
+        │   admin.py
+        │   apps.py
+        │   models.py
+        │   tests.py
+        │   views.py
+        │   __init__.py
+        │
+        └───migrations
+                __init__.py

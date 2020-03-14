@@ -32,11 +32,14 @@ This app uses a number of open source projects to work properly:
 
 ### Docker
 
+### README
 
+Readme was created using [Dillinger] 
 
 
 **Free Software, Hell Yeah!**
 
    [dill]: <https://github.com/joemccann/dillinger>
+   [Dillinger]: <https://dillinger.io/>
    [Python]: <https://www.python.org/downloads/release/python-373/>
  
