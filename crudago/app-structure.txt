@@ -1,5 +1,5 @@
 
-CRUD-APP-GITHUB-OAUTH\
+CRUD-APP-GITHUB-OAUTH\ (project directory)
     .gitignore
     env
     crudago (root)

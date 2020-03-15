@@ -39,7 +39,14 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'social_django',
     'update_profile',
+    'phonenumber_field',
 ]
+
+# phonenumber_field
+# https://github.com/stefanfoulis/django-phonenumber-field
+PHONENUMBER_DEFAULT_REGION = "GB"
+
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
