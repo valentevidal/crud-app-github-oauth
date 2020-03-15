@@ -144,6 +144,11 @@ STATIC_URL = '/static/'
 LOGIN_URL = 'login'
 LOGOUT_URL = 'logout'
 LOGIN_REDIRECT_URL = 'home'
+LOGOUT_REDIRECT_URL = 'logout_redirect'
+
+
+
+
 
 try:
     from .local_settings import *

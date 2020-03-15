@@ -6,3 +6,7 @@ from django.shortcuts import render
 @login_required
 def home(request):
     return render(request, 'update_profile/home.html')
+
+
+def logout_redirect(request):
+    return render(request, 'registration/logout_redirect.html')
