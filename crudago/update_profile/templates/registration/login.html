@@ -1,14 +1,27 @@
 {% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
 
 {% block content %}
-  <h2>Login</h2>
-  <form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Login</button>
-  </form>
-  <br>
-  <p><strong>-- OR --</strong></p>
-  <a href="{% url 'social:begin' 'github' %}">Login with GitHub</a>
-  <br>
+
+  <div class="col-md-4 offset-md-4 mt-5">
+    <div class="jumbotron">
+      <h2>Login</h2>
+      <form method="post">
+        {% csrf_token %}
+        {{ form | crispy }}
+        <button type="submit">Login</button>
+      </form>
+      <br>
+
+    <p><strong>-- OR --</strong></p>
+    <a class="btn btn-block btn-social btn-lg btn-github" href="{% url 'social:begin' 'github' %}">
+      <span class="fa fa-github"></span>
+      Login with GitHub
+      </a>
+    <br>
+
+    </div>
+</div>
+
 {% endblock %}
