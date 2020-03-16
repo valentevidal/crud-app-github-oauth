@@ -5,6 +5,66 @@
 
 
 {% block content %}
-  <h2>Homepage</h2>
-  <p>Hello {{ user.username }}!</p>
+<h2>Hello {{user.first_name}} </h2>
+<h3>This is your Profile</h3>
+<br>
+<br>
+  <form>
+    <div class="form-row">
+      <div class="col-md-4 mb-3">
+        <label for="disabledTextInput">First name</label>
+        <input type="text" id="disabledTextInput" class="form-control" value="{{ user.first_name }}" required disabled>
+      </div>
+      <div class="col-md-4 mb-3">
+        <label for="validationDefault02">Last name</label>
+        <input type="text" class="form-control" id="validationDefault02" value="{{ user.last_name }}" required disabled>
+      </div>
+      <div class="col-md-4 mb-3">
+        <label for="validationDefaultUsername">Username</label>
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroupPrepend2">@</span>
+          </div>
+          <input type="text" class="form-control" id="validationDefaultUsername"  value="{{ user.username }}"  aria-describedby="inputGroupPrepend2" required disabled>
+        </div>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="col-md-6 mb-3">
+        <label for="validationDefault03">Address 1</label>
+        <input type="text" class="form-control" id="validationDefault03" value="{{ user.userprofile.address_1 }}" required disabled>
+      </div>
+
+      <div class="col-md-6 mb-3">
+        <label for="validationDefault03">Address 2</label>
+        <input type="text" class="form-control" id="validationDefault03" value="{{ user.userprofile.address_2 }}"  required disabled>
+      </div>
+    </div>
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="basic-addon3">Phone Number</span>
+      </div>
+      <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3" value="{{ user.userprofile.phone_number }}"  required disabled>
+    </div>
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="basic-addon3">Birthday</span>
+      </div>
+      <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3" value="{{ user.userprofile.birthday }}"  required disabled>
+    </div>
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="basic-addon3">Gender</span>
+      </div>
+      <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3" value="{{ user.userprofile.gender }}"  required disabled>
+    </div>
+
+    <div id="update_button">
+      <a class="btn btn-large btn-info" href="profile_form/">Edit Profile</a>
+    </div>
+  </form>
+
+
+
+
 {% endblock %}

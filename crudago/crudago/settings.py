@@ -40,7 +40,12 @@ INSTALLED_APPS = [
     'social_django',
     'update_profile',
     'phonenumber_field',
+    'crispy_forms',
 ]
+
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
 
 # phonenumber_field
 # https://github.com/stefanfoulis/django-phonenumber-field
