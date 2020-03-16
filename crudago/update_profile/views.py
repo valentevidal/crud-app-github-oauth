@@ -1,12 +1,21 @@
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .forms import UserForm, ProfileForm
 from django.views.generic import UpdateView
 from django.http import HttpResponse, HttpResponseRedirect
+from django.contrib.auth.forms import AdminPasswordChangeForm, PasswordChangeForm
+from django.contrib.auth import update_session_auth_hash
+from django.contrib import messages
 
 
+
+
+
+
+@login_required
 def home(request):
+    print ("HOME")
     return render(request, 'update_profile/home.html')
 
 @login_required
@@ -42,6 +51,24 @@ def profile_form(request):
 def delete_user(request):
     if request.method == 'POST':
         uid = request.user.id
-        print (uid)
         User.objects.filter(id=uid).delete()
-        return render(request, '') 
+        return HttpResponseRedirect('/')
+
+@login_required
+def change_password(request):
+    if request.user.has_usable_password():
+        PasswordForm = PasswordChangeForm
+    else:
+        PasswordForm = AdminPasswordChangeForm
+    if request.method == 'POST':
+        form = PasswordForm(request.user, request.POST)
+        if form.is_valid():
+            form.save()
+            update_session_auth_hash(request, form.user)
+            messages.success(request, 'Your password was successfully updated!')
+            return redirect('password')
+        else:
+            messages.error(request, 'Please correct the error below.')
+    else:
+        form = PasswordForm(request.user)
+    return render(request, 'registration/change_password.html', {'form': form })

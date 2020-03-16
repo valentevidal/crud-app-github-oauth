@@ -54,14 +54,30 @@
         </div>
     </div>
 
+    <div class="row">
+        <div class="col-md-4">
+            <button class="btn btn-large btn-info" >Update Profile</button>
+        </form>
+            <br>
+        </div>
+   
+        <div class="col-md-4">
+            <a class="btn btn-large btn-info" href="/change_password/">Change Password</a>
+           
+        </div>
 
-    <button class="btn btn-large btn-info" >Update</button>
-</form>
-    <br>
+        <div class="col-md-4">
+            <form action="/delete_user/" method="POST", autocomplete="off">  
+                {% csrf_token %}  
+                <button class="btn btn-large btn-info btn btn-danger"  type="submit" type="submit">Delete Profile</button>
+            </form>
+            
+        </div>
+
+    </div>
 
 
-    <form action="/delete_user/" method="POST", autocomplete="off">  
-        {% csrf_token %}  
-        <button class="btn btn-large btn-info"  type="submit" type="submit">Delete Profile</button>
-    </form>
+
+
+
 {% endblock %}

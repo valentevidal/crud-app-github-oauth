@@ -14,7 +14,9 @@ urlpatterns = [
     path('logout_redirect/', up_views.logout_redirect, name='logout_redirect'),
     path('oauth/', include('social_django.urls', namespace='social')), 
     path('profile_form/', up_views.profile_form, name='profile_form' ),
-    path('delete_user/', up_views.delete_user, name='delete_user')
+    path('delete_user/', up_views.delete_user, name='delete_user'),
+    path('change_password/', up_views.change_password, name='change_password')
+
 
 ]
 
